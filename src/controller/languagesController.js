@@ -5,6 +5,12 @@ const getAll = async (_req, res) => {
     return res.status(200).json({ languages });
 }
 
+const createLanguage = async (req, res) => {
+    const createdLanguage = await languagesModel.createLanguage(req.body);
+    return res.status(201).json({ createdLanguage });
+}
+
 module.exports = {
     getAll,
+    createLanguage,
 }
